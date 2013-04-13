@@ -721,6 +721,7 @@ float getOrientationDegrees( InterfaceOrientation orientation )
 
 // iOS 6+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 60000
+#ifdef AUTO_ROTATION
 - (NSUInteger)supportedInterfaceOrientations
 {
 	// Only rotate after setup. On secondary monitors we don't support any rotation
@@ -741,6 +742,7 @@ float getOrientationDegrees( InterfaceOrientation orientation )
 
 	return result;
 }
+#endif
 #endif
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration

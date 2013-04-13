@@ -70,6 +70,15 @@ class AppCocoaTouch : public App {
 		void		enableStatusBar( bool enable = true ) { mEnableStatusBar = enable; }
 		//! Returns whether the system status bar is visible initially. Default is \c false.
 		bool		isStatusBarEnabled() const { return mEnableStatusBar; }
+
+		void 		enableAutoRotation(bool enable = true) {
+			if (enable) {
+#define AUTO_ROTATION
+			} else {
+#undef AUTO_ROTATION
+			}
+		}
+
 		
 	  private:
 		bool		mEnableMultiTouch, mEnableStatusBar;
